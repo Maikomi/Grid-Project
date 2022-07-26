@@ -24,3 +24,10 @@ btn5.onclick = () => {
       document.getElementById('three').style.backgroundColor = "red";
     }
 }
+
+const btn6 = document.getElementById('six');
+btn6.ondblclick = () => {
+  let newBg = document.getElementById('six').style;
+  console.log(newBg);
+  btn6.classList.toggle('invert');
+}
