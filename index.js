@@ -51,3 +51,39 @@ const btn7 = document.getElementById('seven');
 btn7.onmouseover = () => { btn7.classList.toggle('changeSize')};
 btn7.onmouseleave = () => { btn7.classList.toggle('changeSize')};
 
+
+const btn8 = document.querySelector('button');
+let text = document.querySelector('h3');
+btn8.onclick = () => {text.classList.toggle('visibility')};
+
+
+let modal = document.getElementById("myModal");
+const btn9 = document.getElementById("nine");
+
+btn9.onclick = () => {modal.style.display = "block";}
+window.onclick = (event) => {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+const btn10 = document.getElementById('ten');
+btn10.onclick = () =>{
+  document.body.classList.toggle('font');
+  console.log(document.body.classList);
+}
+
+
+const new11 = document.createElement("div");
+const btn11 = document.getElementById('add');
+btn11.onclick = () =>{
+  new11.id = "el";
+  new11.className = "item";
+document.getElementById('cntr').appendChild(new11)
+}
+
+
+window.onresize = () => {
+  console.log(window);
+}
