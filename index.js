@@ -1,40 +1,37 @@
 const btn1 = document.getElementById("one");
-// btn1.onclick = () => {document.getElementById('one').style.backgroundColor = "red"}
-
-btn1.onclick = () => {
+btn1.addEventListener('click', () => {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   document.body.style.backgroundColor = "#" + randomColor;
   color.innerHTML = "#" + randomColor;
-};
+});
 
 const btn2 = document.getElementById("two");
-btn2.onclick = () => alert("Hej, to łaskocze. Hi hi hi");
+btn2.addEventListener('click',() => alert("Hej, to łaskocze. Hi hi hi"));
 
-let mssg = document.getElementById('text');
-
+let mE = document.getElementById('mE');
 const btn3 = document.getElementById("three");
 let count = 0;
-btn3.onmouseenter = () => {
+btn3.addEventListener('mouseenter',() => {
   count++;
-};
-btn3.onclick = () => {
-  mssg.textContent = "Mouseenter events count: " + count;
+});
+btn3.addEventListener('click', () => {
+  mE.textContent = "Mouseenter events count: " + count;
   count = 0;
-};
+});
 
 const btn4 = document.getElementById("four");
 let counter = 0;
-btn4.onmouseleave = () => {
+let mL = document.getElementById('mL');
+btn4.addEventListener('mouseleave', () => {
   counter++;
-};
-btn4.onclick = () => {
-  mssg.textContent = "Mouseleave events count: " + counter;
+});
+btn4.addEventListener('click', () => {
+  mL.textContent = "Mouseleave events count: " + counter;
   counter = 0;
-};
+});
 
-const btn5 = document.getElementById("five");
-btn5.onclick = () => {
-  let newBg = document.getElementById("two").style.backgroundColor;
+const kolor = () =>{
+    let newBg = document.getElementById("two").style.backgroundColor;
   if (newBg === "pink") {
     document.getElementById("two").style.backgroundColor = "lightblue";
     document.getElementById("three").style.backgroundColor = "lightblue";
@@ -44,43 +41,45 @@ btn5.onclick = () => {
   }
 };
 
+const btn5 = document.getElementById("five");
+btn5.addEventListener('click', kolor);
+
 const btn6 = document.getElementById("six");
-btn6.ondblclick = () => {
+btn6.addEventListener('dblclick', () => {
   let newBg = document.getElementById("six").style;
   btn6.classList.toggle("invert");
-};
+});
 
 const btn7 = document.getElementById("seven");
-btn7.onmouseover = () => {
+btn7.addEventListener('mouseover', () => {
   btn7.classList.toggle("changeSize");
-};
-btn7.onmouseleave = () => {
+});
+btn7.addEventListener('mouseleave', () => {
   btn7.classList.toggle("changeSize");
-};
+});
 
 const btn8 = document.querySelector("button");
 let text = document.querySelector("h3");
-btn8.onclick = () => {
+btn8.addEventListener('click', () => {
   text.classList.toggle("visibility");
-};
+});
 
 let modal = document.getElementById("myModal");
 const btn9 = document.getElementById("nine");
 
-btn9.onclick = () => {
+btn9.addEventListener('click', () => {
   modal.style.display = "block";
-};
-window.onclick = (event) => {
+});
+window.addEventListener('click', (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-};
+});
 
 const btn10 = document.getElementById("ten");
-btn10.onclick = () => {
+btn10.addEventListener('click', () => {
   document.body.classList.toggle("font");
-  console.log(document.body.classList);
-};
+});
 
 const add = () => {
   if (!document.getElementById("cntr").innerHTML.includes("you")) {
@@ -89,7 +88,7 @@ const add = () => {
       new11.id = "eleven";
       new11.className = "item";
       new11.innerHTML =
-        "<a href='https://www.youtube.com/watch?v=5I5V8VZ3OOA'>kliknij mnie :)</a>";
+        "<a href='https://www.youtube.com/watch?v=5I5V8VZ3OOA' target='_blank' rel='noopener noreferrer'>kliknij mnie :)</a>";
       document.getElementById("cntr").appendChild(new11);
     }
   } else {
@@ -100,5 +99,5 @@ const add = () => {
   }
 };
 
-window.onload = () => add();
-window.onresize = () => add();
+window.addEventListener('load', add);
+window.addEventListener('resize', add);
